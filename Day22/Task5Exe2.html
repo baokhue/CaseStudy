@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+  let number = +prompt("Nhập độ dài mảng cha: ");
+  let arr2D = [];
+  let sum = 0;
+  let N = 2;
+  let isPrime = true;
+  let count = 0;
+  for (let i = 0; i < number ; i++) {
+    arr2D[i] = [];
+    document.write(arr2D[i] + "<br>");
+    let childLength = +prompt("Nhập độ dài mảng con");
+    for (let j = 0; j < childLength ; j++) {
+      arr2D[i][j] = +prompt("Nhập số: ");
+      document.write(arr2D[i][j] + "<br>");
+        for (let k = 2; k < arr2D[i][j]; k++) {
+            if (arr2D[i][j] % i === 0) {
+                // ko phai so nguyen to
+                isPrime = false;
+                break;
+            }
+        }
+        if (isPrime) {
+            count++;
+            // document.write("<br>");
+        }
+    }
+  }
+  document.write("Các số nguyên tố có trong ma trận: " + count);
+
+  /*
+  * let number = +prompt("Enter a number: ");
+    let count = 0;
+    let N = 2;
+    while (count < number) {
+        let isPrime = true;
+        for (let i = 2; i < N; i++) {
+            if (N % i === 0) {
+                // ko phai so nguyen to
+                isPrime = false;
+                break;
+            }
+        }
+        if (isPrime) {
+            count++;
+            document.write(N + "<br>");
+        }
+        N++;
+    }*/
+
+</script>
+</html>
